@@ -12,7 +12,6 @@
   <select id="queryUserBook" resultType="com.wyd.spring.model.UserBook" >
     select * from user_book
   </select>
-
     <delete id="delete" >
         delete from user_book where id in
         <foreach item="id" collection="array" open="(" separator="," close=")">
