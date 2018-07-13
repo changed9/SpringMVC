@@ -1,11 +1,13 @@
 package com.wyd.spring.model;
 
+import java.util.Date;
+
 public class User {
     private Integer id;
 
-    private String username;
+    private String name;
 
-    private String password;
+    private Date regTime;
 
     public Integer getId() {
         return id;
@@ -15,28 +17,28 @@ public class User {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public String getName() {
+        return name;
     }
 
-    public void setUsername(String username) {
-        this.username = username == null ? null : username.trim();
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getPassword() {
-        return password;
+    public Date getRegTime() {
+        return regTime;
     }
 
-    public void setPassword(String password) {
-        this.password = password == null ? null : password.trim();
+    public void setRegTime(Date regTime) {
+        this.regTime = regTime;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                '}';
-    }
+    //    @Override
+//    public String toString() {
+//        return "User{" +
+//                "id=" + id +
+//                ", name='" + name + '\'' +
+//                ", password='" + password + '\'' +
+//                '}';
+//    }
 }
