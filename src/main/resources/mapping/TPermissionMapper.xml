@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.wangjie.spring.dao.TPermissionMapper" >
-  <resultMap id="BaseResultMap" type="com.wangjie.spring.model.TPermission" >
+<mapper namespace="com.wyd.spring.dao.TPermissionMapper" >
+  <resultMap id="BaseResultMap" type="com.wyd.spring.model.TPermission" >
     <result column="id" property="id" jdbcType="INTEGER" />
     <result column="permissionname" property="permissionname" jdbcType="VARCHAR" />
     <result column="role_id" property="roleId" jdbcType="INTEGER" />
   </resultMap>
-  <insert id="insert" parameterType="com.wangjie.spring.model.TPermission" >
+  <insert id="insert" parameterType="com.wyd.spring.model.TPermission" >
     insert into t_permission (id, permissionname, role_id
       )
     values (#{id,jdbcType=INTEGER}, #{permissionname,jdbcType=VARCHAR}, #{roleId,jdbcType=INTEGER}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.wangjie.spring.model.TPermission" >
+  <insert id="insertSelective" parameterType="com.wyd.spring.model.TPermission" >
     insert into t_permission
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.wangjie.spring.dao.TBRoleMenuMapper" >
-  <resultMap id="BaseResultMap" type="com.wangjie.spring.model.TBRoleMenu" >
+<mapper namespace="com.wyd.spring.dao.TBRoleMenuMapper" >
+  <resultMap id="BaseResultMap" type="com.wyd.spring.model.TBRoleMenu" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="menu_id" property="menuId" jdbcType="INTEGER" />
     <result column="role_id" property="roleId" jdbcType="INTEGER" />
@@ -19,13 +19,13 @@
     delete from t_role_menu
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.wangjie.spring.model.TBRoleMenu" >
+  <insert id="insert" parameterType="com.wyd.spring.model.TBRoleMenu" >
     insert into t_role_menu (id, menu_id, role_id
       )
     values (#{id,jdbcType=INTEGER}, #{menuId,jdbcType=INTEGER}, #{roleId,jdbcType=INTEGER}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.wangjie.spring.model.TBRoleMenu" >
+  <insert id="insertSelective" parameterType="com.wyd.spring.model.TBRoleMenu" >
     insert into t_role_menu
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -50,7 +50,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.wangjie.spring.model.TBRoleMenu" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.wyd.spring.model.TBRoleMenu" >
     update t_role_menu
     <set >
       <if test="menuId != null" >
@@ -62,7 +62,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.wangjie.spring.model.TBRoleMenu" >
+  <update id="updateByPrimaryKey" parameterType="com.wyd.spring.model.TBRoleMenu" >
     update t_role_menu
     set menu_id = #{menuId,jdbcType=INTEGER},
       role_id = #{roleId,jdbcType=INTEGER}

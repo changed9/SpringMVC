@@ -18,13 +18,13 @@
     delete from t_user
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.wangjie.spring.model.User" >
+  <insert id="insert" parameterType="com.wyd.spring.model.User" >
     insert into t_user (id, username, password
       )
     values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.wangjie.spring.model.User" >
+  <insert id="insertSelective" parameterType="com.wyd.spring.model.User" >
     insert into t_user
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -49,7 +49,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.wangjie.spring.model.User" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.wyd.spring.model.User" >
     update t_user
     <set >
       <if test="username != null" >
@@ -61,7 +61,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.wangjie.spring.model.User" >
+  <update id="updateByPrimaryKey" parameterType="com.wyd.spring.model.User" >
     update t_user
     set username = #{username,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR}

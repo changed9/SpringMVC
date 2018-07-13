@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.wangjie.spring.dao.TBMenuMapper" >
-  <resultMap id="BaseResultMap" type="com.wangjie.spring.model.TBMenu" >
+<mapper namespace="com.wyd.spring.dao.TBMenuMapper" >
+  <resultMap id="BaseResultMap" type="com.wyd.spring.model.TBMenu" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="menu_name" property="menuName" jdbcType="VARCHAR" />
     <result column="level" property="level" jdbcType="INTEGER" />
@@ -21,13 +21,13 @@
     delete from t_menu
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.wangjie.spring.model.TBMenu" >
+  <insert id="insert" parameterType="com.wyd.spring.model.TBMenu" >
     insert into t_menu (id, menu_name, level, 
       pid, url)
     values (#{id,jdbcType=INTEGER}, #{menuName,jdbcType=VARCHAR}, #{level,jdbcType=INTEGER}, 
       #{pid,jdbcType=INTEGER}, #{url,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.wangjie.spring.model.TBMenu" >
+  <insert id="insertSelective" parameterType="com.wyd.spring.model.TBMenu" >
     insert into t_menu
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -64,7 +64,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.wangjie.spring.model.TBMenu" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.wyd.spring.model.TBMenu" >
     update t_menu
     <set >
       <if test="menuName != null" >
@@ -82,7 +82,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.wangjie.spring.model.TBMenu" >
+  <update id="updateByPrimaryKey" parameterType="com.wyd.spring.model.TBMenu" >
     update t_menu
     set menu_name = #{menuName,jdbcType=VARCHAR},
       level = #{level,jdbcType=INTEGER},
