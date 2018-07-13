@@ -25,10 +25,7 @@
       </if>
   </select>
     <delete id="delete" >
-        delete from user_book where id in
-        <foreach item="id" collection="array" open="(" separator="," close=")">
-            #{id}
-        </foreach>
+        delete from user_book where id = #{id}
     </delete>
   <insert id="save">
     INSERT into user_book (borrowUser,bookName,borrowTime) VALUES (#{borrowUser,jdbcType=VARCHAR},#{bookName,jdbcType=VARCHAR},NOW())

@@ -17,8 +17,8 @@ public class UserBookServiceImpl implements UserBookService {
     @Resource
     private UserBookDao userBookDao;
 
-    public void delete(Integer[] ids) {
-        userBookDao.delete(ids);
+    public void delete(Integer id) {
+        userBookDao.delete(id);
     }
 
     public List<UserBook> queryUserBook() {

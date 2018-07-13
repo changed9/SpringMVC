@@ -38,7 +38,7 @@
                     <td>{{userbook.borrowUser}}</td>
                     <td>{{userbook.bookName}}</td>
                     <td>{{userbook.borrowTime}}</td>
-                    <td><a href="javascript:void(0)" @click="del(userbook)">删除</a></td>
+                    <td><a href="javascript:void(0)" @click="del(userbook.id)">删除</a></td>
                 </tr>
                 </tbody>
             </table>
@@ -70,14 +70,13 @@
                     }
                 })
             },
-            del: function (user) {
-                confirm('确定要删除id为' + user.id + '的1条记录？', function () {
+            del: function (id) {
+                confirm('确定要删除id为' + id + '的1条记录？', function () {
                     $.ajax({
                         url: "/userbook/delete.do",
                         type: "post",
                         dataType: "json",
-                        contentType: "application/json",
-                        data: JSON.stringify(book),
+                        data: {id:id},
                         success: function (res) {
                             if (res.code==0){
                                 alert("操作成功")

@@ -9,7 +9,7 @@ import java.util.List;
  */
 public interface UserBookService {
 
-    void delete(Integer[] ids);
+    void delete(Integer id);
 
     List<UserBook> queryUserBook();
 

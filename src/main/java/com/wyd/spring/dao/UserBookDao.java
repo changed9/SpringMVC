@@ -13,7 +13,7 @@ public interface UserBookDao {
 
     List<UserBook> queryUserBook();
 
-    void delete(Integer[] ids);
+    void delete(Integer id);
 
     void save(UserBook userBook);
 /**

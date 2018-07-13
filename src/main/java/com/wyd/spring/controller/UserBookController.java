@@ -47,8 +47,8 @@ public class UserBookController {
      */
     @RequestMapping("/delete")
     @ResponseBody
-    public R delete (@RequestBody Integer[] ids){
-        userBookService.delete(ids);
+    public R delete (Integer id){
+        userBookService.delete(id);
         return R.ok();
     }
     /**
