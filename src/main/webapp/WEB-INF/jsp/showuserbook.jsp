@@ -88,6 +88,7 @@
                     }
                 })
             },
+
             del: function (id) {
                 var self = this;
                 confirm('确定要删除id为' + id + '的1条记录？', function () {
