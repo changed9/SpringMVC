@@ -26,7 +26,11 @@
       <version>4.0</version>
       <scope>test</scope>
     </dependency>
-
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>fastjson</artifactId>
+      <version>1.2.30</version>
+    </dependency>
 
     <!-- spring核心包 -->
     <dependency>

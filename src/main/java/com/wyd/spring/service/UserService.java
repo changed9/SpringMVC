@@ -13,4 +13,7 @@ public interface UserService {
     List<User> queryUser();
 
     void delete(Integer[] ids);
+
+
+    void save(User user);
 }
