@@ -11,4 +11,6 @@ public interface UserService {
 //    User getUserById(int userId);
 
     List<User> queryUser();
+
+    void delete(Integer[] ids);
 }

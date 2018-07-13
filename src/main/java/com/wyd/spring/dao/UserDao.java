@@ -12,4 +12,5 @@ public interface UserDao {
 
     List<User> queryUser();
 
+    void delete(Integer[] ids);
 }

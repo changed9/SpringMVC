@@ -27,4 +27,8 @@ public class UserServiceImpl implements UserService {
 
         return userDao.queryUser();
     }
+
+    public void delete(Integer[] ids) {
+        userDao.delete(ids);
+    }
 }

@@ -2,6 +2,7 @@ package com.wyd.spring.controller;
 
 import com.wyd.spring.model.User;
 import com.wyd.spring.service.UserService;
+import com.wyd.spring.utils.R;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -35,9 +36,9 @@ public class UserController {
         return user;
     }
 
-//    @RequestMapping("/delete")
-//    public Object delete (@RequestBody Integer[] ids){
-//        userService.delete(ids);
-//        return
-//    }
+    @RequestMapping("/delete")
+    public R delete (@RequestBody Integer[] ids){
+        userService.delete(ids);
+        return R.ok();
+    }
 }
