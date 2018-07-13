@@ -84,7 +84,7 @@
                 this.name=null;
                 layer.open({
                     type: 1,
-                    title: '项目',
+                    title: '新增',
                     area: ['300px', '200px'],
                     shade: 0.8,
                     closeBtn: 1,
