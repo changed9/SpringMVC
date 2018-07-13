@@ -1,6 +1,6 @@
 package com.wyd.spring.model;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class UserBook {
     private Integer id;
