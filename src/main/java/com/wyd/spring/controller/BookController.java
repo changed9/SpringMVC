@@ -43,6 +43,7 @@ public class BookController {
         List<Book> book = bookService.queryUser();
         return book;
     }
+
     /**
      * 删除
      */
