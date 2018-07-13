@@ -89,6 +89,7 @@
                 })
             },
             del: function (id) {
+                var self = this;
                 confirm('确定要删除id为' + id + '的1条记录？', function () {
                     $.ajax({
                         url: "/userbook/delete.do",
@@ -97,7 +98,9 @@
                         data: {id:id},
                         success: function (res) {
                             if (res.code==0){
-                                alert("操作成功")
+                                alert("操作成功",function () {
+                                    self.reload();
+                                } )
                             } else{
                                 alert(res.msg);
                             }
