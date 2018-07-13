@@ -10,16 +10,16 @@
     id, username, password
   </sql>
   <select id="queryUserBook" resultType="com.wyd.spring.model.UserBook" >
-    select * from user
+    select * from user_book
   </select>
 
     <delete id="delete" >
-        delete from user where id in
+        delete from user_book where id in
         <foreach item="id" collection="array" open="(" separator="," close=")">
             #{id}
         </foreach>
     </delete>
   <insert id="save">
-    INSERT into user (name,regtime) VALUES (#{name,jdbcType=VARCHAR},NOW())
+    INSERT into user_book (borrowUser,bookName,borrowTime) VALUES (#{borrowUser,jdbcType=VARCHAR},#{bookName,jdbcType=VARCHAR},NOW())
   </insert>
 </mapper>
