@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * Created by wyd
  */
-@Service("userService")
+@Service("userBookService")
 public class UserBookServiceImpl implements UserBookService {
     @Resource
     private UserBookDao userBookDao;

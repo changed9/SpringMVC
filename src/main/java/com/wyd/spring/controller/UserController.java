@@ -3,9 +3,11 @@ package com.wyd.spring.controller;
 import com.wyd.spring.model.User;
 import com.wyd.spring.service.UserService;
 import com.wyd.spring.utils.R;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
@@ -17,7 +19,7 @@ import java.util.List;
 /**
  * Created by wyd
  */
-@RestController
+@Controller
 @RequestMapping("/user")
 public class UserController {
     @Resource
@@ -26,7 +28,16 @@ public class UserController {
     /**
      * 数据列表
      * */
-    @RequestMapping("/showUser")
+    @RequestMapping("/showuser.do")
+    public String toPage() {
+        return "showuser";
+    }
+
+    /**
+     * 数据列表
+     * */
+    @RequestMapping("/userlist.do")
+    @ResponseBody
     public Object queryUser(HttpServletRequest request, Model model) {
         List<User> user = userService.queryUser();
         return user;
@@ -34,16 +45,19 @@ public class UserController {
     /**
      * 删除
      */
-    @RequestMapping("/delete")
-    public R delete (@RequestBody Integer[] ids){
-        userService.delete(ids);
+    @RequestMapping("/delete.do")
+    @ResponseBody
+    public R delete (@RequestBody User user){
         return R.ok();
     }
     /**
      * 新增
      * */
-    @RequestMapping("/save")
-    public R save(@RequestBody User user){
+    @RequestMapping("/save.do")
+    @ResponseBody
+    public R save(String name){
+        User user = new User();
+        user.setName(name);
         userService.save(user);
         return R.ok();
     }

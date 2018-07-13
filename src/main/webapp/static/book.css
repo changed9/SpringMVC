@@ -1,0 +1,20 @@
+.body{width: 100%;}
+a{color: cornflowerblue;}
+.bodyIn{width: 100%;text-align: center;padding: 0 10%;box-sizing: border-box;}
+.title{font-size: 20px;font-weight: bold;text-align: center;}
+.bodyMain{width: 80%;
+    text-align: center;
+    margin: 0 auto;display: flex;margin-top: 50px;}
+.bodyMain div{width: 20%;border: 1px solid #ccc;text-align: center;margin: 0 auto;height: 300px;line-height: 200px;}
+.listMain{width: 100%;}
+.listMain p{display: block;}
+.listMain p span{display: inline-block;}
+.listMain p span:last-child{float: right;}
+.listMain{width: 100%;
+    margin: 0 auto;margin-top: 50px;}
+.listIn{width: 100%;padding: 0 10%;box-sizing: border-box;}
+table{width: 100%;border-collapse:collapse;}
+.itable tr{border-bottom: 1px solid #ccc;}
+.itable tr:first-child{border-top: 1px solid #ccc;}
+.itable td{width: 19%;height: 50px;line-height: 50px;text-align: center;border-right: 1px solid #ccc;}
+.itable td:first-child{border-left: 1px solid #ccc;}

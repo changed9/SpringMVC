@@ -1,14 +1,26 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图书管理系统</title>
+    <link rel="stylesheet" href="../static/main.css">
+</head>
 <body>
-<div>
-    <h2>图书管理系统</h2>
-
+<div class="body">
+    <div class="bodyIn">
+        <div class="title"><p>图书管理系统</p></div>
+        <div class="bodyMain">
+            <div>
+                <a href="user/showuser.do">用户管理</a>
+            </div>
+            <div>
+                <a>图书管理</a>
+            </div>
+            <div>
+                <a>借书管理</a>
+            </div>
+        </div>
+    </div>
 </div>
-
 </body>
-<script>
-
-
-</script>
 </html>
