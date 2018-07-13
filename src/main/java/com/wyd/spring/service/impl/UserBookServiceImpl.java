@@ -1,12 +1,8 @@
 package com.wyd.spring.service.impl;
 
 import com.wyd.spring.dao.UserBookDao;
-import com.wyd.spring.dao.UserDao;
-import com.wyd.spring.dao.UserMapper;
-import com.wyd.spring.model.User;
 import com.wyd.spring.model.UserBook;
 import com.wyd.spring.service.UserBookService;
-import com.wyd.spring.service.UserService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

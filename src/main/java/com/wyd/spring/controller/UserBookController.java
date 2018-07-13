@@ -1,9 +1,7 @@
 package com.wyd.spring.controller;
 
-import com.wyd.spring.model.User;
 import com.wyd.spring.model.UserBook;
 import com.wyd.spring.service.UserBookService;
-import com.wyd.spring.service.UserService;
 import com.wyd.spring.utils.R;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;

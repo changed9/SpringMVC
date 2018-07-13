@@ -1,7 +1,6 @@
 package com.wyd.spring.dao;
 
 import com.wyd.spring.model.Book;
-import com.wyd.spring.model.User;
 
 import java.util.List;
 
