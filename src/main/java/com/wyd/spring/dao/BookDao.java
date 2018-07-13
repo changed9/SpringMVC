@@ -12,7 +12,7 @@ public interface BookDao {
 
     List<Book> queryBook();
 
-    void delete(Integer[] ids);
+    void delete(int id);
 
     void save(Book book);
 }

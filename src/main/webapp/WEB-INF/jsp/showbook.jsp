@@ -47,6 +47,8 @@
     <div id="project" style="display: none">
         <br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <input type="text" v-model="name" placeholder="请输入书名">&nbsp;&nbsp;
+        <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" v-model="writer" placeholder="请输入作者名">&nbsp;&nbsp;
         <button @click="submit">确定</button>
     </div>
 </div>
@@ -56,7 +58,8 @@
         el: "#app",
         data: {
             list: [],
-            name:null
+            name:null,
+            writer:null
         },
         methods: {
             reload: function () {
@@ -70,9 +73,9 @@
                     }
                 })
             },
-            del: function (user) {
+            del: function (book) {
                 var self = this;
-                confirm('确定要删除id为' + user.id + '的1条记录？', function () {
+                confirm('确定要删除id为' + book.id + '的记录？', function () {
                     $.ajax({
                         url: "/book/delete.do",
                         type: "post",
@@ -92,6 +95,8 @@
             },
             add:function () {
                 this.name=null;
+                this.writer=null;
+
                 layer.open({
                     type: 1,
                     title: '新增',
@@ -108,7 +113,7 @@
                     url: "/book/save.do",
                     type: "post",
                     dataType:"json",
-                    data: {name:this.name},
+                    data: {name:this.name,writer:this.writer},
                     success: function (res) {
                         if (res.code==0){
                             layer.closeAll();

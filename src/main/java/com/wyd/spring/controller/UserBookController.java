@@ -1,5 +1,7 @@
 package com.wyd.spring.controller;
 
+import com.wyd.spring.model.Book;
+import com.wyd.spring.model.User;
 import com.wyd.spring.model.UserBook;
 import com.wyd.spring.service.UserBookService;
 import com.wyd.spring.utils.R;
@@ -12,9 +14,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.util.HashMap;
 import java.util.List;
-
-;
+import java.util.Map;
 
 /**
  * Created by wyd
@@ -39,8 +41,14 @@ public class UserBookController {
     @RequestMapping("/userbooklist")
     @ResponseBody
     public Object queryUser(HttpServletRequest request, Model model) {
+        Map<String, Object> map = new HashMap<String, Object>();
         List<UserBook> userBooks = userBookService.queryUserBook();
-        return userBooks;
+        List<User> users = userBookService.queryUser();
+        List<Book> books = userBookService.queryBook();
+        map.put("userBooks",userBooks);
+        map.put("users",users);
+        map.put("books",books);
+        return map;
     }
     /**
      * 删除
@@ -56,7 +64,10 @@ public class UserBookController {
      * */
     @RequestMapping("/save")
     @ResponseBody
-    public R save(@RequestBody UserBook userBook){
+    public R save(String borrowUser, String bookName){
+        UserBook userBook = new UserBook();
+        userBook.setBookName(bookName);
+        userBook.setBorrowUser(borrowUser);
         userBookService.save(userBook);
         return R.ok();
     }

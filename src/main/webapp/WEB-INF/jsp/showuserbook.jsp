@@ -45,9 +45,20 @@
         </div>
     </div>
     <div id="project" style="display: none">
-        <br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="text" v-model="name" placeholder="请输入书名">&nbsp;&nbsp;
-        <button @click="submit">确定</button>
+        <br/>
+        <div style="text-align: center">
+            <select v-model="borrowUser" style="width: 100px;">
+                <option v-for="item in user" :value="item.name">{{item.name}}</option>
+            </select>
+            <select v-model="bookName" style="width: 100px;">
+                <option v-for="item in book" :value="item.name">{{item.name}}</option>
+            </select>
+            <br/><br/>
+            <button @click="submit">确定</button>
+        </div>
+
+
+
     </div>
 </div>
 </body>
@@ -56,7 +67,11 @@
         el: "#app",
         data: {
             list: [],
-            name:null
+            name:null,
+            borrowUser:null,
+            bookName:null,
+            user:[],
+            book:[]
         },
         methods: {
             reload: function () {
@@ -66,7 +81,10 @@
                     type: "post",
                     dataType: "json",
                     success: function (res) {
-                        self.list = res;
+                        console.log(res);
+                        self.list = res.userBooks;
+                        self.user = res.users;
+                        self.book = res.books;
                     }
                 })
             },
@@ -90,6 +108,8 @@
             },
             add:function () {
                 this.name=null;
+                this.borrowUser=null;
+                this.bookName=null;
                 layer.open({
                     type: 1,
                     title: '新增',
@@ -106,7 +126,7 @@
                     url: "/userbook/save.do",
                     type: "post",
                     dataType:"json",
-                    data: {name:this.name},
+                    data: {bookName:this.bookName,borrowUser:this.borrowUser},
                     success: function (res) {
                         if (res.code==0){
                             layer.closeAll();

@@ -25,8 +25,8 @@ public class BookServiceImpl implements BookService {
         return bookDao.queryBook();
     }
 
-    public void delete(Integer[] ids) {
-        bookDao.delete(ids);
+    public void delete(int id) {
+        bookDao.delete(id);
     }
 
     public void save(Book book) {

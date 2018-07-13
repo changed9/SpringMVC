@@ -52,10 +52,12 @@ public class BookController {
     @ResponseBody
     public R delete (String name, Integer id){
         List<UserBook> userBooks = bookService.queryUBbook(name);
-
-
-//        bookService.delete(ids);
-        return R.ok();
+        if (userBooks.size()>=1){
+            return R.error("未还书，删除失败");
+        }else {
+            bookService.delete(id);
+            return R.ok();
+        }
     }
 
     /**
@@ -63,7 +65,10 @@ public class BookController {
      * */
     @RequestMapping("/save.do")
     @ResponseBody
-    public R save(@RequestBody Book book){
+    public R save(String name,String writer){
+        Book book =new Book();
+        book.setName(name);
+        book.setBookWriter(writer);
         bookService.save(book);
         return R.ok();
     }

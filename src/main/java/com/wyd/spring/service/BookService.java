@@ -12,7 +12,7 @@ public interface BookService {
 
     List<Book> queryUser();
 
-    void delete(Integer[] ids);
+    void delete(int id);
 
     void save(Book book);
 

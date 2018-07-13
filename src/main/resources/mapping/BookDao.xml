@@ -9,10 +9,7 @@
   </select>
 
     <delete id="delete" >
-        delete from book where id in
-        <foreach item="id" collection="array" open="(" separator="," close=")">
-            #{id}
-        </foreach>
+        delete from book where id = #{id}
     </delete>
   <insert id="save">
     INSERT into book (name,bookWriter,storageTime) VALUES (#{name,jdbcType=VARCHAR},#{bookWriter,jdbcType=VARCHAR},NOW())
