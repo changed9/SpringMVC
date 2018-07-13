@@ -62,16 +62,18 @@
                 })
             },
             del: function (user) {
-                confirm('确定要删除id为' + user.id + '的1条记录？', function () {
+                var self = this;
+                confirm('确定要删除id为' + user.id + '的记录？', function () {
                     $.ajax({
                         url: "/user/delete.do",
                         type: "post",
                         dataType: "json",
-                        contentType: "application/json",
-                        data: JSON.stringify(user),
+                        data: {"name":user.name,"id":user.id},
                         success: function (res) {
                             if (res.code==0){
-                                alert("操作成功")
+                                alert("操作成功",function () {
+                                    self.reload();
+                                })
                             } else{
                                 alert(res.msg);
                             }

@@ -14,10 +14,10 @@
   </select>
 
     <delete id="delete" >
-        delete from user where id in
-        <foreach item="id" collection="array" open="(" separator="," close=")">
-            #{id}
-        </foreach>
+        delete from user where id = #{id}
+        <!--<foreach item="id" collection="array" open="(" separator="," close=")">-->
+            <!--#{id}-->
+        <!--</foreach>-->
     </delete>
   <insert id="save">
     INSERT into user (name,regtime) VALUES (#{name,jdbcType=VARCHAR},NOW())

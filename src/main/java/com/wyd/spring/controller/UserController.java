@@ -1,6 +1,7 @@
 package com.wyd.spring.controller;
 
 import com.wyd.spring.model.User;
+import com.wyd.spring.model.UserBook;
 import com.wyd.spring.service.UserService;
 import com.wyd.spring.utils.R;
 import org.springframework.stereotype.Controller;
@@ -47,8 +48,14 @@ public class UserController {
      */
     @RequestMapping("/delete.do")
     @ResponseBody
-    public R delete (@RequestBody User user){
-        return R.ok();
+    public R delete (String name,Integer id){
+        List<UserBook> userBooks = userService.queryUBuser(name);
+        if (userBooks.size()>=1){
+            return R.error("未还书，删除失败");
+        }else {
+            userService.delete(id);
+            return R.ok();
+        }
     }
     /**
      * 新增
