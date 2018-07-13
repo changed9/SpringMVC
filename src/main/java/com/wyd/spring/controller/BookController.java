@@ -5,9 +5,11 @@ import com.wyd.spring.model.User;
 import com.wyd.spring.service.BookService;
 import com.wyd.spring.service.UserService;
 import com.wyd.spring.utils.R;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
@@ -18,16 +20,25 @@ import java.util.List;
 /**
  * Created by wyd
  */
-@RestController
+@Controller
 @RequestMapping("/book")
 public class BookController {
     @Resource
     private BookService bookService;
 
     /**
+     *
+     * */
+    @RequestMapping("/showbook.do")
+    public String toPage() {
+        return "showbook";
+    }
+
+    /**
      * 数据列表
      * */
-    @RequestMapping("/showBook")
+    @RequestMapping("/booklist.do")
+    @ResponseBody
     public Object queryBook(HttpServletRequest request, Model model) {
         List<Book> book = bookService.queryUser();
         return book;
@@ -35,7 +46,8 @@ public class BookController {
     /**
      * 删除
      */
-    @RequestMapping("/delete")
+    @RequestMapping("/delete.do")
+    @ResponseBody
     public R delete (@RequestBody Integer[] ids){
         bookService.delete(ids);
         return R.ok();
@@ -43,7 +55,8 @@ public class BookController {
     /**
      * 新增
      * */
-    @RequestMapping("/save")
+    @RequestMapping("/save.do")
+    @ResponseBody
     public R save(@RequestBody Book book){
         bookService.save(book);
         return R.ok();

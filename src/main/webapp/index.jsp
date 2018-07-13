@@ -14,10 +14,10 @@
                 <a href="user/showuser.do">用户管理</a>
             </div>
             <div>
-                <a>图书管理</a>
+                <a href="book/showbook.do">图书管理</a>
             </div>
             <div>
-                <a>借书管理</a>
+                <a href="/userbook/showUserBook.do">借书管理</a>
             </div>
         </div>
     </div>

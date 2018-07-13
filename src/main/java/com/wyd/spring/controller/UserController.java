@@ -26,7 +26,7 @@ public class UserController {
     private UserService userService;
 
     /**
-     * 数据列表
+     *
      * */
     @RequestMapping("/showuser.do")
     public String toPage() {

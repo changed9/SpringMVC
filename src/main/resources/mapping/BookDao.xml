@@ -4,7 +4,7 @@
   <sql id="Base_Column_List" >
     id, username, password
   </sql>
-  <select id="queryUser" resultType="com.wyd.spring.model.Book" >
+  <select id="queryBook" resultType="com.wyd.spring.model.Book" >
     select * from book
   </select>
 
