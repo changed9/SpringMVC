@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
- * @author Grated by yanweijun on 2018-07-13
+ * @author Grated by wyd
  */
 @Controller
 public class PageController {
