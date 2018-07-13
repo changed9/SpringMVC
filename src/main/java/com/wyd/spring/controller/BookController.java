@@ -52,6 +52,7 @@ public class BookController {
         bookService.delete(ids);
         return R.ok();
     }
+
     /**
      * 新增
      * */
