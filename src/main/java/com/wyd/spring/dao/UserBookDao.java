@@ -20,4 +20,8 @@ public interface UserBookDao {
  * 是否有user的数据，有则不能删除
  * */
     List<UserBook> queryUBuser(@Param("userName") String userName);
+    /**
+     * 是否有book的数据，有则不能删除
+     * */
+    List<UserBook> queryUBbook(@Param("name") String name);
 }

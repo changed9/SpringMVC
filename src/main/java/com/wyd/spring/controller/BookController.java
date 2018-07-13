@@ -2,6 +2,7 @@ package com.wyd.spring.controller;
 
 import com.wyd.spring.model.Book;
 import com.wyd.spring.model.User;
+import com.wyd.spring.model.UserBook;
 import com.wyd.spring.service.BookService;
 import com.wyd.spring.service.UserService;
 import com.wyd.spring.utils.R;
@@ -49,8 +50,11 @@ public class BookController {
      */
     @RequestMapping("/delete.do")
     @ResponseBody
-    public R delete (@RequestBody Integer[] ids){
-        bookService.delete(ids);
+    public R delete (String name, Integer id){
+        List<UserBook> userBooks = bookService.queryUBbook(name);
+
+
+//        bookService.delete(ids);
         return R.ok();
     }
 

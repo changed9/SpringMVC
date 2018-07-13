@@ -1,6 +1,7 @@
 package com.wyd.spring.service;
 
 import com.wyd.spring.model.Book;
+import com.wyd.spring.model.UserBook;
 
 import java.util.List;
 
@@ -14,4 +15,6 @@ public interface BookService {
     void delete(Integer[] ids);
 
     void save(Book book);
+
+    List<UserBook> queryUBbook(String name);
 }
