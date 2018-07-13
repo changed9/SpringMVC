@@ -5,6 +5,7 @@ import com.wyd.spring.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -13,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * Created by wyd
  */
-@Controller
+@RestController
 @RequestMapping("/user")
 public class UserController {
     @Resource
@@ -28,8 +29,8 @@ public class UserController {
 //    }
 
     @RequestMapping("/showUser")
-    public String queryUser(HttpServletRequest request, Model model) {
+    public Object queryUser(Integer page, Integer limit, HttpServletRequest request, Model model) {
         List<User> user = userService.queryUser();
-        return "showUser";
+        return user;
     }
 }
