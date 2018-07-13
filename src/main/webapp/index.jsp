@@ -17,7 +17,7 @@
                 <a href="book/showbook.do">图书管理</a>
             </div>
             <div>
-                <a href="/userbook/showUserBook.do">借书管理</a>
+                <a href="userbook/showuserbook.do">借书管理</a>
             </div>
         </div>
     </div>
